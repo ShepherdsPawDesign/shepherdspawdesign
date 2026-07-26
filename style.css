@@ -1,0 +1,146 @@
+/* ==========================================
+   基本設定
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ここの色を変えるだけでサイト全体の差し色が変わります */
+  --accent-color: #e8795a;
+  --text-color: #2b2b2b;
+  --bg-color: #fbfaf8;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   ヘッダー
+   ========================================== */
+.site-header {
+  padding: 24px 32px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   イントロ(トップの一言紹介)
+   ========================================== */
+.intro {
+  text-align: center;
+  padding: 80px 24px 100px;
+}
+
+.intro h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.intro-sub {
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.intro-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ==========================================
+   Works セクション
+   ========================================== */
+.works {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px 100px;
+}
+
+.works h2 {
+  font-size: 1.6rem;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.works-grid {
+  display: grid;
+  /* スマホでは1列、画面が広くなると自動で列が増える */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.work-card {
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}
+
+.work-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+
+  /* 実際の画像を使う場合は、下のコメントを外して
+     background-color の行を消してください */
+  /* background-image: url("images/work1.jpg");
+     background-size: cover;
+     background-position: center; */
+}
+
+.work-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.work-tag {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ==========================================
+   フッター
+   ========================================== */
+.site-footer {
+  text-align: center;
+  padding: 48px 24px;
+  border-top: 1px solid #e5e2dc;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #999;
+}
