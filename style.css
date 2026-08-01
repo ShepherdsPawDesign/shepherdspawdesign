@@ -39,27 +39,81 @@ a {
 }
 
 /* ==========================================
-   イントロ(トップの一言紹介)
+   ヒーローエリア(左: 大きいイラスト / 右: テキスト)
    ========================================== */
-.intro {
-  text-align: center;
-  padding: 80px 24px 100px;
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
 }
 
-.intro h1 {
+.hero-visual {
+  aspect-ratio: 4 / 5;
+  background-color: #e5e2dc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: calc(100% - 32px);
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0;
+  animation: heroFade 10s infinite;
+}
+
+.hero-slideshow img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero-slideshow img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+@keyframes heroFade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.hero-text h1 {
   font-size: 2.2rem;
   margin-bottom: 8px;
 }
 
-.intro-sub {
-  color: var(--accent-color);
+.hero-sub {
+  color: #5a7d9a;
   font-weight: 500;
   margin-bottom: 24px;
 }
 
-.intro-text {
+.hero-lead {
   font-size: 1rem;
   color: #555;
+}
+
+/* スマホなど画面が狭いときは縦積みにする */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 24px 60px;
+  }
 }
 
 /* ==========================================
@@ -97,15 +151,44 @@ a {
 .work-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background-color: #ddd;
+  background-color: transparent;
   border-radius: 8px;
   margin-bottom: 12px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  /* 実際の画像を使う場合は、下のコメントを外して
-     background-color の行を消してください */
-  /* background-image: url("images/work1.jpg");
-     background-size: cover;
-     background-position: center; */
+.work-thumb-1 {
+  background-image: url("images/work1.png");
+  background-size: 50%;
+}
+
+.work-thumb-2 {
+  background-image: url("images/work2.png");
+  background-size: 80%;
+}
+
+.work-thumb-3 {
+  background-image: url("images/work3.png");
+  background-size: contain;
+  padding: 8%;
+}
+
+.work-thumb-4 {
+  background-image: url("images/work4.png");
+  background-size: cover;
+}
+
+.work-thumb-5 {
+  background-image: url("images/work5.png");
+  background-size: 80%;
+}
+
+.work-thumb-6 {
+  background-image: url("images/work6.png");
+  background-size: contain;
+  padding: 8%;
 }
 
 .work-title {
@@ -117,6 +200,71 @@ a {
   font-size: 0.8rem;
   color: #888;
   margin-top: 2px;
+}
+
+/* ==========================================
+   お問い合わせページ
+   ========================================== */
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.contact h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.contact-lead {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  text-align: center;
+  margin: 0;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 14px 32px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5a7d9a;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.submit-button:hover {
+  background-color: #3a6b8f;
+  opacity: 0.95;
+}
+
+.contact-note {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.contact-note a {
+  color: #5a7d9a;
+  text-decoration: underline;
+}
+
+.contact-note a:hover {
+  color: #3a6b8f;
 }
 
 /* ==========================================
@@ -137,7 +285,7 @@ a {
 }
 
 .footer-links a:hover {
-  color: var(--accent-color);
+  color: #3a6b8f;
 }
 
 .copyright {
