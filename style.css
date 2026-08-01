@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Manrope", "Zen Kaku Gothic New", sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
   line-height: 1.7;
@@ -353,7 +353,7 @@ a {
   border-radius: 8px;
   background-color: #5a7d9a;
   color: #fff;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Manrope", "Zen Kaku Gothic New", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
