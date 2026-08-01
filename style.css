@@ -30,12 +30,52 @@ a {
    ヘッダー
    ========================================== */
 .site-header {
+  display: flex;
+  align-items: center;
   padding: 24px 32px;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
   font-weight: 700;
   letter-spacing: 0.05em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.site-nav a {
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: #3a6b8f;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 24px;
+  color: #777;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.language-switch a:hover,
+.language-switch a[aria-current="page"] {
+  color: #3a6b8f;
+}
+
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
 }
 
 /* ==========================================
@@ -110,9 +150,85 @@ a {
 
 /* スマホなど画面が狭いときは縦積みにする */
 @media (max-width: 700px) {
+  .site-header {
+    padding: 20px 24px;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .nav-toggle-label span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin-left: auto;
+    background-color: var(--text-color);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% - 4px);
+    right: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 170px;
+    padding: 8px;
+    border: 1px solid #e5e2dc;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    box-shadow: 0 12px 28px rgba(43, 43, 43, 0.1);
+  }
+
+  .site-nav a {
+    padding: 10px 12px;
+  }
+
+  .language-switch {
+    position: absolute;
+    top: 25px;
+    right: 68px;
+    margin-left: 0;
+  }
+
+  .nav-toggle:checked ~ .site-nav {
+    display: flex;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 40px 24px 60px;
+  }
+
+  .simple-page {
+    min-height: 460px;
+    padding: 56px 24px 80px;
+  }
+
+  .shop-card {
+    padding: 24px;
   }
 }
 
@@ -268,6 +384,70 @@ a {
 }
 
 /* ==========================================
+   About / Shop ページ
+   ========================================== */
+.simple-page {
+  max-width: 760px;
+  min-height: 520px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+}
+
+.eyebrow {
+  color: #5a7d9a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.simple-page h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.page-lead {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 48px;
+}
+
+.about-copy {
+  max-width: 580px;
+  color: #555;
+}
+
+.about-copy p + p {
+  margin-top: 20px;
+}
+
+.text-link {
+  display: inline-block;
+  color: #5a7d9a;
+  margin-top: 40px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.text-link:hover {
+  color: #3a6b8f;
+}
+
+.shop-card {
+  max-width: 560px;
+  padding: 32px;
+  border: 1px solid #e5e2dc;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.shop-card p {
+  color: #555;
+  margin-bottom: 28px;
+}
+
+/* ==========================================
    フッター
    ========================================== */
 .site-footer {
@@ -291,4 +471,15 @@ a {
 .copyright {
   font-size: 0.8rem;
   color: #999;
+}
+
+@media (max-width: 700px) {
+  .simple-page {
+    min-height: 460px;
+    padding: 56px 24px 80px;
+  }
+
+  .shop-card {
+    padding: 24px;
+  }
 }
