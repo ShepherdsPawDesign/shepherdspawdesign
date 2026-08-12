@@ -154,6 +154,10 @@ a {
     padding: 20px 24px;
   }
 
+  .logo {
+    font-size: 0.9rem;
+  }
+
   .nav-toggle-label {
     display: flex;
     flex-direction: column;
