@@ -148,6 +148,7 @@ a {
 }
 
 .hero-role {
+  margin-left: 0.5em;
   font-weight: 400;
 }
 
@@ -417,6 +418,23 @@ a {
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.3;
   margin-bottom: 24px;
+}
+
+.about-heading .about-name,
+.about-heading .about-role {
+  display: block;
+}
+
+.about-heading .about-name {
+  font-weight: 700;
+}
+
+.about-heading .about-role {
+  margin-top: 4px;
+  color: #5a7d9a;
+  font-size: 0.38em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 .page-lead {
