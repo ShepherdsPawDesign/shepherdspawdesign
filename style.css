@@ -139,8 +139,16 @@ a {
 
 .hero-sub {
   color: #5a7d9a;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 24px;
+}
+
+.hero-name {
+  font-weight: 700;
+}
+
+.hero-role {
+  font-weight: 400;
 }
 
 .hero-lead {
