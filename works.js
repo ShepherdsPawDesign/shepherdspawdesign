@@ -1,5 +1,6 @@
 const modal = document.querySelector(".work-modal");
 const modalImage = document.querySelector(".modal-image");
+const modalPreview = document.querySelector(".modal-preview");
 
 document.querySelectorAll(".gallery-card").forEach((card) => {
   card.addEventListener("click", () => {
@@ -9,8 +10,11 @@ document.querySelectorAll(".gallery-card").forEach((card) => {
     modalImage.classList.toggle("modal-image-padded", card.classList.contains("gallery-card-padded"));
     document.querySelector(".modal-title").textContent = card.dataset.title;
     document.querySelector(".modal-category").textContent = card.dataset.category;
-    document.querySelector(".modal-meta").textContent = `${card.dataset.year}  /  ${card.dataset.tools}`;
+    document.querySelector(".modal-meta").textContent = card.dataset.tools;
     document.querySelector(".modal-description").textContent = card.dataset.description;
+    modalPreview.href = card.dataset.preview || "#";
+    modalPreview.textContent = card.dataset.previewLabel || "Preview in Figma →";
+    modalPreview.hidden = !card.dataset.preview;
     modal.showModal();
   });
 });
