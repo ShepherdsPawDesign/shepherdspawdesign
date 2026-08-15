@@ -334,6 +334,11 @@ a {
   padding: 8%;
 }
 
+.work-thumb-pizza {
+  background-image: url("images/work7.png");
+  background-size: cover;
+}
+
 .work-thumb-7 {
   background-image: url("images/library-website.png");
   background-size: cover;
@@ -529,6 +534,20 @@ a {
   border-radius: 8px;
 }
 
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.modal-images:has(.modal-image-secondary[hidden]) {
+  display: block;
+}
+
+.modal-image-secondary[hidden] {
+  display: none;
+}
+
 .modal-image-small {
   width: 50%;
   margin-right: auto;
@@ -563,6 +582,17 @@ a {
 
 .modal-description {
   margin-top: 16px;
+}
+
+.modal-preview,
+.modal-case-study {
+  display: block;
+  margin-top: 12px;
+}
+
+.modal-preview[hidden],
+.modal-case-study[hidden] {
+  display: none;
 }
 
 /* ==========================================
@@ -820,5 +850,9 @@ a {
 
   .modal-image {
     max-height: 52vh;
+  }
+
+  .modal-images {
+    grid-template-columns: 1fr;
   }
 }
