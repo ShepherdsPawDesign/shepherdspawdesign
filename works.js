@@ -3,6 +3,8 @@ const modalImage = document.querySelector(".modal-image");
 const modalImageSecondary = document.querySelector(".modal-image-secondary");
 const modalPreview = document.querySelector(".modal-preview");
 const modalCaseStudy = document.querySelector(".modal-case-study");
+const modalPresentation = document.querySelector(".modal-presentation");
+const modalPresentationLink = document.querySelector(".modal-presentation-link");
 
 function openModal(card) {
   modalImage.src = card.dataset.image;
@@ -22,6 +24,8 @@ function openModal(card) {
   modalCaseStudy.href = card.dataset.caseStudy || "#";
   modalCaseStudy.textContent = card.dataset.caseStudyLabel || "View Case Study PDF →";
   modalCaseStudy.hidden = !card.dataset.caseStudy;
+  modalPresentationLink.href = card.dataset.presentation || "#";
+  modalPresentation.hidden = !card.dataset.presentation;
   if (!modal.open) modal.showModal();
 }
 
