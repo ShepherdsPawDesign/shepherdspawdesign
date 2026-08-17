@@ -339,6 +339,11 @@ a {
   background-size: cover;
 }
 
+.work-thumb-magazine {
+  background-image: url("images/A3Magazine.pdf.png");
+  background-size: cover;
+}
+
 .work-thumb-7 {
   background-image: url("images/library-website.png");
   background-size: cover;
