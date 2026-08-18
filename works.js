@@ -5,6 +5,8 @@ const modalPreview = document.querySelector(".modal-preview");
 const modalCaseStudy = document.querySelector(".modal-case-study");
 const modalPresentation = document.querySelector(".modal-presentation");
 const modalPresentationLink = document.querySelector(".modal-presentation-link");
+const modalSource = document.querySelector(".modal-source");
+const modalSourceLink = document.querySelector(".modal-source-link");
 
 function openModal(card) {
   modalImage.src = card.dataset.image;
@@ -26,6 +28,8 @@ function openModal(card) {
   modalCaseStudy.hidden = !card.dataset.caseStudy;
   modalPresentationLink.href = card.dataset.presentation || "#";
   modalPresentation.hidden = !card.dataset.presentation;
+  modalSourceLink.href = card.dataset.source || "#";
+  modalSource.hidden = !card.dataset.source;
   if (!modal.open) modal.showModal();
 }
 

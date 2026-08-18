@@ -620,6 +620,26 @@ a {
   margin-top: 8px;
 }
 
+.modal-source {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+}
+
+.modal-source[hidden] {
+  display: none;
+}
+
+.modal-source h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.modal-source-link {
+  display: block;
+  margin-top: 8px;
+}
+
 /* ==========================================
    お問い合わせページ
    ========================================== */
