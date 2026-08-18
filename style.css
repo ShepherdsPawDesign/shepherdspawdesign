@@ -344,6 +344,11 @@ a {
   background-size: cover;
 }
 
+.work-thumb-wss {
+  background-image: url("images/works8.png");
+  background-size: contain;
+}
+
 .work-thumb-7 {
   background-image: url("images/library-website.png");
   background-size: cover;
